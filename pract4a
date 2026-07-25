@@ -1,0 +1,230 @@
+Header.jsx
+function Header() {
+    return (
+        <div>
+            <h2>Sheth L. U. J & Sir M. V. College Placement Dashboard</h2>
+            <hr />
+        </div>
+    );
+}
+export default Header;
+
+
+Student.jsx
+function Student() {
+    const totalClasses = 60;
+    const attendedClasses = 59;
+    const attendance = (attendedClasses / totalClasses) * 100;
+
+
+    const totalGradePoints = 80;
+    const totalSubjects = 9;
+    const cgpa = totalGradePoints / totalSubjects;
+    return (
+        <div>
+            <h2>Student Profile</h2>
+            <p>Name: Afsha Mujawar</p>
+            <p>Branch: Information Technology</p>
+            <p>CGPA: {cgpa.toFixed(2)}</p>
+            <p>Attendance: {attendance.toFixed(2)}%</p>
+        </div>
+    );
+}
+export default Student;
+
+
+Eligibility.jsx
+function Eligibility() {
+    const totalGradePoints = 80;
+    const totalSubjects = 9;
+    const cgpa = totalGradePoints / totalSubjects;
+
+
+    const totalClasses = 60;
+    const attendedClasses = 59;
+    const attendance = (attendedClasses / totalClasses) * 100;
+
+
+    const minCGPA = 7;
+    const minAttendance = 75;
+    const status =
+        cgpa >= minCGPA && attendance >= minAttendance
+            ? "Eligible"
+            : "Not Eligible";
+    return (
+        <div>
+            <h2>Placement Eligibility</h2>
+            <p>Minimum CGPA Required: {minCGPA}</p>
+            <p>Minimum Attendance: {minAttendance}%</p>
+            <p>Status: {status}</p>
+        </div>
+    );
+}
+export default Eligibility;
+
+
+Placementstatus.jsx
+function Placementstatus() {
+
+
+    const totalStudents = 180;
+    const placedStudents = 142;
+
+
+    const remainingStudents = totalStudents - placedStudents;
+    const placementPercentage = (placedStudents / totalStudents) * 100;
+    return (
+        <div>
+            <h2>Placement Statistics</h2>
+            <p>Total Students: {totalStudents}</p>
+            <p>Placed Students: {placedStudents}</p>
+            <p>Remaining Students: {remainingStudents}</p>
+            <p>Placement Percentage: {placementPercentage.toFixed(2)}%</p>
+        </div>
+    );
+}
+export default Placementstatus;
+
+
+Companyoffer.jsx
+function Companyoffer() {
+    const basicSalary = 550000;
+    const HRA = 50000;
+    const bonus = 25000;
+    const totalPackage = basicSalary + HRA + bonus;
+    return (
+        <div>
+            <h2>Company Offer</h2>
+            <p>Company: Infosys</p>
+            <p>Basic Salary: ₹{basicSalary}</p>
+            <p>HRA: ₹{HRA}</p>
+            <p>Bonus: ₹{bonus}</p>
+            <p>Total Package: ₹{totalPackage}</p>
+        </div>
+    );
+}
+export default Companyoffer;
+
+
+Skillprogress.jsx
+function Skillprogress() {
+    const totalSkills = 12;
+    const completedSkills = 9;
+    const pendingSkills = totalSkills - completedSkills;
+
+
+    const progress = (completedSkills / totalSkills) * 100;
+    return (
+        <div>
+            <h2>Skill Progress</h2>
+            <p>Total Skills: {totalSkills}</p>
+            <p>Completed Skills: {completedSkills}</p>
+            <p>Pending Skills: {pendingSkills}</p>
+            <p>Progress: {progress.toFixed(2)}%</p>
+        </div>
+    );
+}
+export default Skillprogress;
+
+
+Footer.jsx
+function Footer() {
+    return (
+        <footer>
+            <p>© 2026 Sheth L. U. J & Sir M. V. Placement Cell</p>
+        </footer>
+    );
+}
+export default Footer;
+
+
+App.jsx
+import Header from "./component/Header";
+import Student from "./component/Student";
+import Eligibility from "./component/Eligibility";
+import Placementstatus from "./component/Placementstatus";
+import Companyoffer from "./component/Companyoffer";
+import Skillprogress from "./component/Skillprogress";
+import Footer from "./component/Footer";
+import "./App.css";
+function App() {
+  return (
+    <div className="container">
+      <Header />
+      <hr />
+      <Student />
+      <hr />
+      <Eligibility />
+      <hr />
+      <Placementstatus />
+      <hr />
+      <Companyoffer />
+      <hr />
+      <Skillprogress />
+      <hr />
+      <Footer />
+    </div>
+  );
+}
+export default App;
+
+
+App.css
+body {
+  margin: 0;
+  padding: 0;
+  background-color: grey;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.container {
+  width: 80%;
+  max-width: 900px;
+  margin: 15px auto;
+  background: white;
+  border: 1px solid palevioletred;
+  box-shadow: 0 2px 8px black;
+}
+
+
+h1 {
+  text-align: center;
+  color: blueviolet;
+  font-size: 40px;
+  margin: 15px 0;
+  font-weight: bold;
+}
+
+
+h2 {
+  color: green;
+  text-align: center;
+  font-size: 26px;
+  margin-bottom: 12px;
+}
+
+
+.container {
+  text-align: center;
+}
+
+
+p {
+  margin: 6px 0;
+  color: brown;
+  font-size: 18px;
+}
+hr {
+  border: none;
+  border-top: 1px solid pink;
+  margin: 20px 0;
+}
+footer,
+.footer {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  color: powderblue;
+  padding: 20px 0;
+}
