@@ -1,0 +1,75 @@
+function Header() {
+  return (
+    <div>
+      <h1>Online Food Delivery Dashboard</h1>
+      <hr />
+    </div>
+  );
+}
+export default Header;
+
+
+Footer.jsx:
+function Footer() {
+  return (
+    <div>
+      <hr />
+      <p>© 2026 Food Delivery App</p>
+    </div>
+  );
+}
+export default Footer;
+
+HotelCard.jsx
+function HotelCard(props) {
+  const discountAmount = (props.price * props.discount) / 100;
+  const finalPrice = props.price - discountAmount;
+
+  return (
+    <div>
+      <h2>{props.restaurant}</h2>
+      <p>Food Item: {props.food}</p>
+      <p>Original Price: ₹{props.price}</p>
+      <p>Discount: {props.discount}%</p>
+      <p>Discount Amount: ₹{discountAmount}</p>
+      <p>Final Price: ₹{finalPrice}</p>
+      <p>Rating: ⭐ {props.rating}</p>
+      <hr />
+    </div>
+  );
+}
+export default HotelCard;
+
+
+App.jsx:
+import Header from "./components/Header";
+import HotelCard from "./components/HotelCard";
+import Footer from "./components/Footer";
+
+function App() {
+  return (
+    <div>
+      <Header />
+
+      <HotelCard
+        restaurant="Domino's Pizza"
+        food="Farmhouse Pizza"
+        price={399}
+        discount={25}
+        rating={4.5}
+      />
+
+      <HotelCard
+        restaurant="McDonald's"
+        food="McAloo Tikki Burger"
+        price={199}
+        discount={20}
+        rating={4.7}
+      />
+
+      <Footer />
+    </div>
+  );
+}
+
+export default App;
